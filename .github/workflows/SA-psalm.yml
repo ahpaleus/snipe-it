@@ -21,7 +21,8 @@ jobs:
         run: composer require --dev vimeo/psalm
       - name: PHPDoc generation for Laravel Facades
         run: php artisan ide-helper:generate
-
+      - name: Download mcrypt helper
+        run: wget https://raw.githubusercontent.com/JetBrains/phpstorm-stubs/master/mcrypt/mcrypt.php -O _mcrypt_helper.php
       - name: Execute Psalm
         run: ./vendor/bin/psalm --long-progress --output-format=github --no-cache
 
@@ -46,6 +47,8 @@ jobs:
         run: composer require --dev barryvdh/laravel-ide-helper
       - name: Download Psalm
         run: composer require --dev vimeo/psalm
+      - name: Download mcrypt helper
+        run: wget https://raw.githubusercontent.com/JetBrains/phpstorm-stubs/master/mcrypt/mcrypt.php -O _mcrypt_helper.php
       - name: PHPDoc generation for Laravel Facades
         run: php artisan ide-helper:generate
       - name: Execute Psalm (Taint Analysis)
