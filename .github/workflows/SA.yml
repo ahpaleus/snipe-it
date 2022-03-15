@@ -27,7 +27,7 @@ jobs:
       - name: Download deps
         run: composer update --no-interaction --no-progress
       - name: Download PHPStan
-        run: composer require --dev phpstan/phpstan:1.5.x-dev
+        run: composer require --dev phpstan/phpstan #:1.5.x-dev
       - name: Download larastan v1 (Laravel Framework 6.20.44)
         run: composer require nunomaduro/larastan:^1.0 --dev
       - name: PHPStan version 
@@ -35,4 +35,4 @@ jobs:
       - name: Delete conflicting file
         run: rm -f database/migrations/2015_11_05_183749_image.php
       - name: Execute PHPStan
-        run: vendor/bin/phpstan analyze --no-progress -l 0 --memory-limit 6G .
+        run: vendor/bin/phpstan analyze . --debug -vvv --no-progress -l 0 --memory-limit 2G
