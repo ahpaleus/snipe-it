@@ -1,9 +1,11 @@
-name: CI SDLC
+name: SA-phpstan
 on: [push]
 jobs:
   phpstan-semgrep-security-scan:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
