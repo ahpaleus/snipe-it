@@ -1,34 +1,21 @@
 name: CI SDLC
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  phpstan-semgrep-security-scan:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
-        uses: actions/checkout@v2
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.0'
-          # coverage: none
+          coverage: none
           ini-values: "memory_limit=-1"
           extensions: mbstring, intl
-      - name: Memory limit
-        run: php -i | grep "memory_limit"
       - name: Download deps
         run: composer update --no-interaction --no-progress
       - name: Download PHPStan
         run: composer require --dev phpstan/phpstan #:1.5.x-dev
-      - name: Download larastan v1 (Laravel Framework 6.20.44)
+      - name: Download Larastan v1 # (Laravel Framework 6.20.44)
         run: composer require nunomaduro/larastan:^1.0 --dev
       - name: PHPStan version 
         run: vendor/bin/phpstan --version
