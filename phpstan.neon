@@ -5,6 +5,7 @@ parameters:
     bootstrapFiles:
         - dotenv.php
         - c3.php
+        - _mcrypt_helper.php
     ignoreErrors:
         - '#PHPDoc tag .#'
     excludePaths:
