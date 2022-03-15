@@ -4,7 +4,9 @@
     resolveFromConfigFile="true"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://getpsalm.org/schema/config"
-    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd">
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+    runTaintAnalysis="true"
+>
     <projectFiles>
         <directory name="app" />
         <ignoreFiles>
@@ -18,5 +20,4 @@
     <issueHandlers>
         <UndefinedDocblockClass errorLevel="suppress" />
     </issueHandlers>
-    <psalm runTaintAnalysis="true" />
 </psalm>
