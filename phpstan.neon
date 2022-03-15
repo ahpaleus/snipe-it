@@ -1,6 +1,5 @@
 includes:
     - ./vendor/nunomaduro/larastan/extension.neon
-
 parameters:
     reportUnmatchedIgnoredErrors: false
     bootstrapFiles:
@@ -11,4 +10,5 @@ parameters:
     excludePaths:
         - tests/*
         - vendor/*
+        - database/*
         
