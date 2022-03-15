@@ -15,10 +15,10 @@ jobs:
           extensions: mbstring, intl
       - name: Download deps
         run: composer update --no-interaction --no-progress
-      - name: Download Psalm
-        run: composer require --dev vimeo/psalm
       - name: Install laravel-ide-helper
         run: composer require --dev barryvdh/laravel-ide-helper
+      - name: Download Psalm
+        run: composer require --dev vimeo/psalm
       - name: PHPDoc generation for Laravel Facades
         run: php artisan ide-helper:generate
       - name: Execute Psalm
