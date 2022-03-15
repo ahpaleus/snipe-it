@@ -21,7 +21,9 @@ jobs:
         run: composer require --dev vimeo/psalm
       - name: PHPDoc generation for Laravel Facades
         run: php artisan ide-helper:generate
-      - name: Execute Psalm (Taint Analysis)
-        run: ./vendor/bin/psalm --long-progress --output-format=github --taint-analysis
+
       - name: Execute Psalm
         run: ./vendor/bin/psalm --long-progress --output-format=github --no-cache
+
+      - name: Execute Psalm (Taint Analysis)
+        run: ./vendor/bin/psalm --long-progress --output-format=github --taint-analysis
