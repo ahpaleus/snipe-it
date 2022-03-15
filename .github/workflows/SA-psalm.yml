@@ -22,4 +22,4 @@ jobs:
       - name: PHPDoc generation for Laravel Facades
         run: php artisan ide-helper:generate
       - name: Execute Psalm
-        run: ./vendor/bin/psalm
+        run: ./vendor/bin/psalm --long-progress --output-format=github
