@@ -27,9 +27,11 @@ jobs:
       - name: Download deps
         run: composer update --no-interaction --no-progress
       - name: Download PHPStan
-        run: composer require --dev phpstan/phpstan
+        run: composer require --dev phpstan/phpstan:1.5.x-dev
       - name: Download larastan v1 (Laravel Framework 6.20.44)
         run: composer require nunomaduro/larastan:^1.0 --dev
+      - name: PHPStan version 
+        run: vendor/bin/phpstan --version
       - name: Delete conflicting file
         run: rm -f database/migrations/2015_11_05_183749_image.php
       - name: Execute PHPStan
