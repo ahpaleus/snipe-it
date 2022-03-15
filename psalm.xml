@@ -15,6 +15,7 @@
     </projectFiles>
     <stubs>
         <file name="_ide_helper.php" />
+        <file name="_mcrypt_helper.php" />
     </stubs>
     <issueHandlers>
         <UndefinedDocblockClass errorLevel="suppress" />
