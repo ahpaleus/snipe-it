@@ -20,6 +20,7 @@ jobs:
         with:
           php-version: '7.4.28'
           coverage: none
+          ini-values: memory_limit=-1
           extensions: mbstring, intl
       - name: Download deps
         run: composer update --no-interaction --no-progress
