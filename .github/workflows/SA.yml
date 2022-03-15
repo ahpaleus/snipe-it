@@ -35,4 +35,4 @@ jobs:
       - name: Delete conflicting file
         run: rm -f database/migrations/2015_11_05_183749_image.php
       - name: Execute PHPStan
-        run: vendor/bin/phpstan analyze app config route --no-progress --error-format=github -l 5
+        run: vendor/bin/phpstan analyze app config routes --no-progress --error-format=github -l 5
