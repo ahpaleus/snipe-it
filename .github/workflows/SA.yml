@@ -27,6 +27,8 @@ jobs:
         run: composer require --dev phpstan/phpstan
       - name: Download larastan v1 (Laravel Framework 6.20.44)
         run: composer require nunomaduro/larastan:^1.0 --dev
+      - name: Delete conflicting file
+        run: rm -f database/migrations/2015_11_05_183749_image.php
       - name: Execute PHPStan
         run: vendor/bin/phpstan analyze --no-progress --error-format=github -l 0 --memory-limit 6G -c phpstan.neon . 
           
