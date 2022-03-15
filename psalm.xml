@@ -18,5 +18,5 @@
     <issueHandlers>
         <UndefinedDocblockClass errorLevel="suppress" />
     </issueHandlers>
-    <psalm runTaintAnalysis="true">
+    <psalm runTaintAnalysis="true" />
 </psalm>
