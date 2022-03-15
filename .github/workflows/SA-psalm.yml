@@ -1,0 +1,23 @@
+name: SA Psalm
+on: [push]
+jobs:
+  psalm-security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+          coverage: none
+          ini-values: "memory_limit=-1"
+          extensions: mbstring, intl
+      - name: Download deps
+        run: composer update --no-interaction --no-progress
+      - name: Download Psalm
+        run: composer require --dev vimeo/psalm
+      - name: Install laravel-ide-helper
+        run: composer require --dev barryvdh/laravel-ide-helper
+      - name: PHPDoc generation for Laravel Facades
+        run: php artisan ide-helper:generate
+      - name: Execute Psalm
+        run: ./vendor/bin/psalm
