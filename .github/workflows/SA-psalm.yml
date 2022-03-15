@@ -24,4 +24,4 @@ jobs:
       - name: Execute Psalm (Taint Analysis)
         run: ./vendor/bin/psalm --long-progress --output-format=github --taint-analysis
       - name: Execute Psalm
-        run: ./vendor/bin/psalm --long-progress --output-format=github
+        run: ./vendor/bin/psalm --long-progress --output-format=github --no-cache
