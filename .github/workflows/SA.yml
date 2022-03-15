@@ -35,4 +35,4 @@ jobs:
       - name: Delete conflicting file
         run: rm -f database/migrations/2015_11_05_183749_image.php
       - name: Execute PHPStan
-        run: vendor/bin/phpstan analyze . --debug -vvv --no-progress -l 0 --memory-limit 2G
+        run: vendor/bin/phpstan analyze app/ --no-progress -l 5
