@@ -28,5 +28,5 @@ jobs:
       - name: Download larastan v1 (Laravel Framework 6.20.44)
         run: composer require nunomaduro/larastan:^1.0 --dev
       - name: Execute PHPStan
-        run: vendor/bin/phpstan analyze --no-progress --error-format=github . -l 0
+        run: vendor/bin/phpstan analyze --no-progress --error-format=github -l 0 --memory-limit 4G -c phpstan.neon . 
           
