@@ -20,7 +20,7 @@ jobs:
         with:
           php-version: '8.0'
           # coverage: none
-          ini-values: "memory_limit=100M"
+          ini-values: "memory_limit=-1"
           extensions: mbstring, intl
       - name: Download deps
         run: composer update --no-interaction --no-progress
@@ -32,4 +32,6 @@ jobs:
         run: rm -f database/migrations/2015_11_05_183749_image.php
       - name: Execute PHPStan
         run: vendor/bin/phpstan analyze --no-progress --error-format=github -l 0 -c phpstan.neon --memory-limit 6G . 
+        env: 
+          COMPOSER_MEMORY_LIMIT: -1
           
