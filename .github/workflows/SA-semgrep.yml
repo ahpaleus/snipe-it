@@ -26,3 +26,5 @@ jobs:
             p/security-audit
             p/secrets
             p/phpcs-security-audit
+        env:
+          SEMGREP_TIMEOUT: 9900
