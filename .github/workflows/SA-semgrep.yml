@@ -1,4 +1,4 @@
-name: SA-semgrep
+name: Semgrep Security Scan
 
 on:
   push:

@@ -1,4 +1,4 @@
-name: SA-phpstan
+name: PHPStan Security Scan
 on:
   push:
     branches: [ master ]
