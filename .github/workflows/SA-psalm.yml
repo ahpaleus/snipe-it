@@ -1,4 +1,4 @@
-name: SA-psalm
+name: Psalm Security Scan
 on:
   push:
     branches: [ master ]
