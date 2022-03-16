@@ -1,7 +1,12 @@
 name: SA-phpstan
-on: [push]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 jobs:
-  phpstan-semgrep-security-scan:
+  phpstan-security-scan:
+    name: PHPStan Security Scan
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code

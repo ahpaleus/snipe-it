@@ -1,7 +1,12 @@
-name: SA Psalm
-on: [push]
+name: SA-psalm
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 jobs:
   psalm-security-scan-basic:
+    name: Psalm Security Scan
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -26,9 +31,6 @@ jobs:
       - name: Execute Psalm
         run: ./vendor/bin/psalm --long-progress --output-format=github --no-cache
 
-      #- name: Execute Psalm (Taint Analysis)
-      #  run: ./vendor/bin/psalm --long-progress --output-format=github --taint-analysis
-        
   psalm-security-scan-taint-analysis:
     runs-on: ubuntu-latest
     steps:

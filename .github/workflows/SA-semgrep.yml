@@ -1,18 +1,17 @@
-name: Semgrep
+name: SA-semgrep
 
 on:
   push:
     branches: [ master ]
   pull_request:
-    # The branches below must be a subset of the branches above
     branches: [ master ]
 
 permissions:
   contents: read
 
 jobs:
-  semgrep:
-    name: Scan
+  semgrep-security-scan:
+    name: Semgrep Security Scan
     runs-on: ubuntu-latest
     # Skip any PR created by dependabot to avoid permission issues
     if: (github.actor != 'dependabot[bot]')
