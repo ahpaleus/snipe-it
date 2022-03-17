@@ -36,11 +36,11 @@ jobs:
       - name: Execute Psalm
         run: ./vendor/bin/psalm --long-progress --no-cache --report=results_base.sarif
       # Upload findings to GitHub Advanced Security Dashboard - disabled for 'base' scan
-#       - name: Upload SARIF file for GitHub Advanced Security Dashboard
-#         uses: github/codeql-action/upload-sarif@v1
-#         with:
-#           sarif_file: results_base.sarif
-#         if: always()
+      # - name: Upload SARIF file for GitHub Advanced Security Dashboard
+      #   uses: github/codeql-action/upload-sarif@v1
+      #   with:
+      #     sarif_file: results_base.sarif
+      #   if: always()
 
   psalm-security-scan-taint-analysis:
     runs-on: ubuntu-latest
