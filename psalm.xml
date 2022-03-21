@@ -16,13 +16,10 @@
             <directory name="tests" />
         </ignoreFiles>
     </projectFiles>
-<<<<<<< HEAD
-=======
     <stubs>
         <file name="_ide_helper.php" />
         <file name="_mcrypt_helper.php" />
     </stubs>
->>>>>>> parent of 91268a158 (Update psalm.xml)
     <issueHandlers>
         <UndefinedDocblockClass errorLevel="suppress" />
         <UndefinedClass errorLevel="suppress" />
