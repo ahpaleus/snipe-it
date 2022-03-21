@@ -189,7 +189,7 @@ class Asset extends Depreciable
      *
      * @var array
      */
-    public function save(array $params = [])
+    public function save(array $options = [])
     {
         if ($this->model_id != '') {
             $model = AssetModel::find($this->model_id);
@@ -205,7 +205,7 @@ class Asset extends Depreciable
             }
         }
 
-        return parent::save($params);
+        return parent::save($options);
     }
 
 
