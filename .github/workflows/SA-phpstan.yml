@@ -24,10 +24,10 @@ jobs:
         run: composer require --dev phpstan/phpstan #:1.5.x-dev
       - name: Download Larastan v1 # (Laravel Framework 6.20.44)
         run: composer require nunomaduro/larastan:^1.0 --dev
-     # - name: Download mcrypt helper
-      #  run: wget https://raw.githubusercontent.com/JetBrains/phpstorm-stubs/master/mcrypt/mcrypt.php -O _mcrypt_helper.php
-      - name: Delete conflicting file
-        run: rm -f database/migrations/2015_11_05_183749_image.php
+      - name: Download mcrypt helper
+        run: wget https://raw.githubusercontent.com/JetBrains/phpstorm-stubs/master/mcrypt/mcrypt.php -O _mcrypt_helper.php
+      #- name: Delete conflicting file
+      #  run: rm -f database/migrations/2015_11_05_183749_image.php
       - name: Execute PHPStan
         run: vendor/bin/phpstan analyze app config routes --no-progress --error-format=github -l 5
         env: 
